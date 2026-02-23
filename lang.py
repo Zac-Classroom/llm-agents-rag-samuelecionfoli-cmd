@@ -1,0 +1,13 @@
+from dotenv import dotenv_value
+
+from langchain.chat_models import init_chat_models
+
+userdata = dotenv_values()
+
+llm = init_chat_models(
+    model=userdata("MODEL")
+    , base_url = userdata("BASE_URL")
+    , api_key = userdata("CEREBRAS")
+    , temperature = userdata("TEMPERATURE") 
+)
+
